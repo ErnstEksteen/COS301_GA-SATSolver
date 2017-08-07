@@ -1,0 +1,184 @@
+  @font-face {
+  	font-family: "Kimberley";
+  	src: url(fonts/Inconsolata-Regular.ttf) format("truetype");
+  }
+
+  html {
+  	font-family: Helvetica;
+  }
+
+  body {
+  	background-color: var(--theme-background);
+  }
+
+  #slide-out {
+  	align-content: center;
+  	background-color: var(--theme-three)
+  }
+
+  #side-bar-title {
+  	padding: 1.2em 2.2em 0;
+  	margin-bottom: 8px;
+  }
+
+  .terminal {
+  	background-color: var(--theme-one);
+  	color: white;
+  	border-style: none;
+  	border-color: Transparent;
+  	font-family: Arial, Helvetica, sans-serif;
+  }
+
+  #circle {}
+
+  #page-title {
+  	width: 60%;
+  	float: left;
+  }
+
+  .SAT-roayal-blue {
+  	background-color: #0c2e4a;
+  }
+
+  .white-text,
+  .select-wrapper span.caret,
+  .dropdown-content li>a,
+  .dropdown-content li>span {
+  	color: white;
+  }
+
+  .nav-bar {
+  	background-color: var(--theme-three);
+  }
+  /*.page-item:nth-child(odd){
+	background-color: #d0d7dc;
+}*/
+
+  .collapsible-header {
+  	background-color: #f0f3f4;
+  	border: 0;
+  }
+
+  .collapsible-header-odd {
+  	background-color: #d0d7dc;
+  }
+
+  .body-container {
+  	padding: 0 2.1rem;
+  }
+
+  .collapsible-body {
+  	padding-top: 0.7rem;
+  	padding-bottom: 1.5rem;
+  }
+
+  .SAT-dark-blue {
+  	background-color: var(--theme-three);
+  	color: #fff;
+  }
+
+  .input-field {
+  	padding: 0rem 1rem;
+  }
+
+  .select-wrapper input.select-dropdown {
+  	border-bottom: none !important;
+  }
+
+  .SAT-darkest-blue,
+  .dropdown-content {
+  	background-color: #1c1e23 !important;
+  	/*color: white !important;*/
+  }
+
+  .select-dropdown li.disabled,
+  .select-dropdown li.disabled>span,
+  .select-dropdown li.optgroup {
+  	color: #6a8795 !important;
+  }
+
+  .select-dropdown li:not(.disabled):hover,
+  .select-dropdown li.active.selected {
+  	background-color: #0076fd;
+  }
+
+  button {
+  	background-color: var(--theme-four) !important;
+  }
+
+  .btn {
+  	text-transform: none;
+  }
+
+   ::-webkit-scrollbar {
+  	width: 12px;
+  }
+  /* Handle */
+
+   ::-webkit-scrollbar-thumb {
+  	background: var(--theme-four);
+  }
+
+  .nav {
+  	position: fixed;
+  }
+  /*
+body:not(.loaded) {
+  display:none;
+}*/
+
+  #dimacs-example {
+  	background-color: var(--theme-one);
+  	color: white;
+  }
+
+  .tooltip {
+  	position: relative;
+  	display: inline-block;
+  	/* If you want dots under the hoverable text */
+  }
+  /* Tooltip text */
+
+  .tooltip .tooltiptext {
+  	visibility: hidden;
+  	width: 120px;
+  	background-color: var(--theme-four);
+  	color: #fff;
+  	text-align: center;
+  	padding: 10px;
+  	border-radius: 6px;
+  	/* Position the tooltip text - see examples below! */
+  	position: absolute;
+  	z-index: 1;
+  }
+  /* Show the tooltip text when you mouse over the tooltip container */
+
+  .tooltip:hover .tooltiptext {
+  	visibility: visible;
+  }
+
+  .tooltip .tooltiptext {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.tooltip:hover .tooltiptext {
+    opacity: 1;
+}
+
+.tooltip .tooltiptext {
+    top: -5px;
+    left: 105%; 
+}
+
+.tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%; /* To the left of the tooltip */
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent var(--theme-four) transparent transparent;
+}
+

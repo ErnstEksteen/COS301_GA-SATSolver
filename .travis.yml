@@ -12,4 +12,4 @@ notifications:
     slack: imperium-se:mBOzfUzNqfrDwonqXmBzg4Nl
     email: false
 
-script: cd src; py.test
+script: export PYTHONPATH=`pwd`; cd test; py.test
