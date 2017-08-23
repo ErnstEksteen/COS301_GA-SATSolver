@@ -6,13 +6,13 @@
 import copy
 import random
 from decimal import Decimal
-from individual import Individual
+from SATSolver.individual import Individual
 
 
 class GA:
-    def __init__(self, formula, number_of_clauses, number_of_variables, tabu_list_length, max_false, rec, k, max_generations=1000, population_size=100,
-                 sub_population_size=15, crossover_operator=0, max_flip=10000, is_rvcf=False,
-                 is_diversification=False, method=None):
+    def __init__(self, formula, number_of_clauses, number_of_variables, tabu_list_length, max_false, rec, k,
+                 max_generations=1000, population_size=100, sub_population_size=15, crossover_operator=0,
+                 max_flip=10000, is_rvcf=False, is_diversification=False, method=None):
 
         self.formula = formula
         self.numberOfClauses = number_of_clauses
@@ -116,6 +116,11 @@ class GA:
         :return: the number of clauses of F which are not satisfied by X.
         """
 
+        if individual.isCacheValid:
+            return individual.fitness
+
+        individual.isCacheValid = True
+
         # Keeps count of unsatisfied clauses
         num_unsatisfied_clauses = 0
 
@@ -126,6 +131,7 @@ class GA:
             if not self.sat(individual, clause):
                 num_unsatisfied_clauses = num_unsatisfied_clauses + 1
 
+        individual.fitness = num_unsatisfied_clauses
         return num_unsatisfied_clauses
 
     def improvement(self, individual, index):
@@ -507,8 +513,6 @@ class GA:
             self.population.append(child)
 
         return
-
-
 
     def gasat(self):
         """

@@ -21,6 +21,8 @@ class Individual:
         implementation.  """
 
         self.length = length
+        self.fitness = 0
+        self.isCacheValid = False
 
         if method not in [0, 1]:
             self.method = Individual.BIT_VECTOR
@@ -39,7 +41,6 @@ class Individual:
 
             if value is not None:
                 self.data = BitVector(bitlist=value)
-
 
         elif self.method == Individual.BIT_ARRAY:
             self.defined = bitarray(length)
@@ -88,6 +89,7 @@ class Individual:
 
         """ Sets the bit at position b to value v. """
 
+        self.isCacheValid = False
         b -= 1
         if b >= self.length or b < 0:
             return
@@ -101,6 +103,7 @@ class Individual:
 
         """ Flips the bit at position b. """
 
+        self.isCacheValid = False
         b -= 1
         if b >= self.length or b < 0:
             return
@@ -141,7 +144,8 @@ class Individual:
         """ Allocates uniformly from either first or second parent. """
 
         for i in range(self.length):
-            #i is inconsistently indexed in comparison to other places get_defined and set are called thus 1 must be added
+            # i is inconsistently indexed in comparison to other places get_defined and set are called thus 1
+            # must be added
             index = i + 1
             if not self.get_defined(index):
                 if bool(random.getrandbits(1)):

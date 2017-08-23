@@ -34,6 +34,7 @@ class Observer(metaclass=abc.ABCMeta):
     def update(self, arg):
         pass
 
+
 @singleton
 class SATController(Observer):
     def __init__(self):
